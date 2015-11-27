@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		AA93B7C71BE835B100CF6A56 /* Relay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7C41BE835B100CF6A56 /* Relay.swift */; };
 		AA93B7C81BE835B100CF6A56 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7C51BE835B100CF6A56 /* main.swift */; };
-		AA93B7CA1BE8361800CF6A56 /* FBSimulatorControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA93B7C91BE8361800CF6A56 /* FBSimulatorControl.framework */; };
 		AA93B7CC1BE8380B00CF6A56 /* Command.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7C31BE835B100CF6A56 /* Command.swift */; };
 		AA93B7CE1BE9543000CF6A56 /* Parsers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7CD1BE9543000CF6A56 /* Parsers.swift */; };
 		AA93B7D01BE9544000CF6A56 /* Runners.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7CF1BE9544000CF6A56 /* Runners.swift */; };
 		AA93B7D21BEA679600CF6A56 /* Help.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7D11BEA679600CF6A56 /* Help.swift */; };
 		AA93B7D41BEA7ED800CF6A56 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7D31BEA7ED800CF6A56 /* Arguments.swift */; };
 		AA93B7D61BEA97A700CF6A56 /* Bridging.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA93B7D51BEA97A700CF6A56 /* Bridging.swift */; };
-		AAEAC9BB1BF23BAE00B5F957 /* FBSimulatorControl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA93B7C91BE8361800CF6A56 /* FBSimulatorControl.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		AAEAC9BD1BF3CD7B00B5F957 /* SignalHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAC9BC1BF3CD7B00B5F957 /* SignalHandler.swift */; };
 		AAEAC9BF1BF3EA8200B5F957 /* SocketRelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAC9BE1BF3EA8200B5F957 /* SocketRelay.swift */; };
 		AAEAC9C11BF3EA9200B5F957 /* StdIORelay.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEAC9C01BF3EA9200B5F957 /* StdIORelay.swift */; };
+		AAF30E9A1C0F3505007AA100 /* FBSimulatorControl.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA93B7C91BE8361800CF6A56 /* FBSimulatorControl.framework */; };
+		AAF30E9B1C0F3513007AA100 /* FBSimulatorControl.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = AA93B7C91BE8361800CF6A56 /* FBSimulatorControl.framework */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AAF4A3311BF4E2B900978B3A /* LineBuffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF4A3301BF4E2B900978B3A /* LineBuffer.swift */; };
 		AAF4A3381BF5152700978B3A /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = AAF4A3371BF5152700978B3A /* Constants.m */; };
 /* End PBXBuildFile section */
@@ -31,7 +31,7 @@
 			dstPath = Frameworks;
 			dstSubfolderSpec = 10;
 			files = (
-				AAEAC9BB1BF23BAE00B5F957 /* FBSimulatorControl.framework in CopyFiles */,
+				AAF30E9B1C0F3513007AA100 /* FBSimulatorControl.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,7 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA93B7CA1BE8361800CF6A56 /* FBSimulatorControl.framework in Frameworks */,
+				AAF30E9A1C0F3505007AA100 /* FBSimulatorControl.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
