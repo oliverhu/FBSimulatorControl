@@ -68,8 +68,16 @@
 
 + (NSPredicate *)coreSimulatorProcessesForCurrentXcode
 {
+  return [self processesWithLaunchPath:FBSimulatorControlStaticConfiguration.developerDirectory];
   return [NSPredicate predicateWithBlock:^ BOOL (id<FBProcessInfo> processInfo, NSDictionary *_) {
     return [processInfo.launchPath rangeOfString:FBSimulatorControlStaticConfiguration.developerDirectory].location != NSNotFound;
+  }];
+}
+
++ (NSPredicate *)processesWithLaunchPath:(NSString *)launchPath
+{
+  return [NSPredicate predicateWithBlock:^ BOOL (id<FBProcessInfo> processInfo, NSDictionary *_) {
+    return [processInfo.launchPath rangeOfString:launchPath].location != NSNotFound;
   }];
 }
 

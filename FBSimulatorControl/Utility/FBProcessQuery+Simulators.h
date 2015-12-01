@@ -62,10 +62,18 @@
 + (NSPredicate *)simulatorProcessesMatchingUDIDs:(NSArray *)simulators;
 
 /**
- Constructs a Predicate that matches CoreSimulatorService Processes for the current xcode versions
+ Constructs a Predicate that matches CoreSimulatorService Processes for the current xcode versions.
 
  @return an NSPredicate that operates on an Collection of id<FBProcessInfo>.
  */
 + (NSPredicate *)coreSimulatorProcessesForCurrentXcode;
+
+/**
+ Constructs a Predicate that matches Processes for the launchPath.
+
+ @param launchPath the launch path to search for.
+ @return an NSPredicate that operates on an Collection of id<FBProcessInfo>.
+ */
++ (NSPredicate *)processesWithLaunchPath:(NSString *)launchPath;
 
 @end
