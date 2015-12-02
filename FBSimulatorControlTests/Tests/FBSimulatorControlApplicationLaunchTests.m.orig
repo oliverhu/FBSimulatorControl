@@ -1,0 +1,96 @@
+/**
+ * Copyright (c) 2015-present, Facebook, Inc.
+ * All rights reserved.
+ *
+ * This source code is licensed under the BSD-style license found in the
+ * LICENSE file in the root directory of this source tree. An additional grant
+ * of patent rights can be found in the PATENTS file in the same directory.
+ */
+
+#import <XCTest/XCTest.h>
+
+#import <FBSimulatorControl/FBSimulatorControl.h>
+
+#import "FBSimulatorControlAssertions.h"
+#import "FBSimulatorControlFixtures.h"
+#import "FBSimulatorControlTestCase.h"
+
+@interface FBSimulatorControlApplicationLaunchTests : FBSimulatorControlTestCase
+
+@end
+
+@implementation FBSimulatorControlApplicationLaunchTests
+
+- (void)testLaunchesSafariApplication
+{
+<<<<<<< Updated upstream
+  FBSimulatorSession *session = [self createSession];
+
+  FBApplicationLaunchConfiguration *appLaunch = [FBApplicationLaunchConfiguration
+    configurationWithApplication:[FBSimulatorApplication systemApplicationNamed:@"MobileSafari"]
+    arguments:@[]
+    environment:@{}];
+
+  [self.assert interactionSuccessful:[session.interact.bootSimulator launchApplication:appLaunch]];
+
+  [self.assert consumeNotification:FBSimulatorSessionDidStartNotification];
+  [self.assert consumeNotification:FBSimulatorSessionSimulatorProcessDidLaunchNotification];
+  [self.assert consumeNotification:FBSimulatorSessionApplicationProcessDidLaunchNotification];
+  [self.assert noNotificationsToConsume];
+}
+
+- (void)testLaunchesSampleApplication
+{
+  FBSimulatorSession *session = [self createSession];
+
+  FBApplicationLaunchConfiguration *appLaunch = [FBApplicationLaunchConfiguration
+    configurationWithApplication:[FBSimulatorControlFixtures tableSearchApplicationWithError:nil]
+    arguments:@[]
+    environment:@{}];
+
+  [self.assert interactionSuccessful:[[[session.interact
+    bootSimulator]
+    installApplication:appLaunch.application]
+    launchApplication:appLaunch]];
+
+  [self.assert consumeNotification:FBSimulatorSessionDidStartNotification];
+  [self.assert consumeNotification:FBSimulatorSessionSimulatorProcessDidLaunchNotification];
+  [self.assert consumeNotification:FBSimulatorSessionApplicationProcessDidLaunchNotification];
+  [self.assert noNotificationsToConsume];
+=======
+    NSError *error = nil;
+    FBSimulatorSession *session = [self.control createSessionForSimulatorConfiguration:FBSimulatorConfiguration.iPhone5 error:&error];
+    
+    FBSimulatorApplication *myApp = [FBSimulatorApplication applicationWithPath:@"/Users/khu/Library/Developer/Xcode/DerivedData/voyager-aodwsnztqjhrikgifstschfgfhzf/Build/Products/Debug-iphonesimulator/Voyager.app" error:&error];
+    
+    FBApplicationLaunchConfiguration *appLaunch = [FBApplicationLaunchConfiguration
+                                                   configurationWithApplication:[FBSimulatorApplication systemApplicationNamed:@"Health"]
+                                                   arguments:@[]
+                                                   environment:@{}];
+    
+    FBApplicationLaunchConfiguration *appLaunchSafari = [FBApplicationLaunchConfiguration
+                                                   configurationWithApplication:[FBSimulatorApplication systemApplicationNamed:@"MobileSafari"]
+                                                   arguments:@[]
+                                                   environment:@{}];
+    
+    BOOL success = [[[session.interact
+                      bootSimulator]
+                     launchApplication:appLaunch]
+                    performInteractionWithError:&error];
+    
+    [[[session.interact
+       bootSimulator]
+      launchApplication:appLaunchSafari]
+     performInteractionWithError:&error];
+    
+    XCTAssertTrue(success);
+    XCTAssertNil(error);
+    [self.notificationAssertion consumeNotification:FBSimulatorSessionDidStartNotification];
+    [self.notificationAssertion consumeNotification:FBSimulatorSessionSimulatorProcessDidLaunchNotification];
+    [self.notificationAssertion consumeNotification:FBSimulatorSessionApplicationProcessDidLaunchNotification];
+    [self.notificationAssertion noNotificationsToConsume];
+>>>>>>> Stashed changes
+}
+
+
+@end
